@@ -1,0 +1,14 @@
+{
+  "rooms": [
+    {
+      "accessible": false,
+      "description": "Please enter a description for this room",
+      "features": [],
+      "image": "https://www.mwtestconsultancy.co.uk/img/room1.jpg",
+      "roomName": "104",
+      "roomPrice": 100,
+      "roomid": 4,
+      "type": "Single"
+    }
+  ]
+}

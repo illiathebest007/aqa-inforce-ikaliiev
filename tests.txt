@@ -1,0 +1,91 @@
+Test Cases for Shady Meadows B&B Booking System
+
+[Case-1] Check that the room can be booked with valid data
+Pre-conditions:
+1. User is on the main page of https://automationintesting.online/
+Steps:
+1. Click "Book this room" for an available room (e.g., Double Room).
+2. Select available dates in the calendar (Check-in / Check-out).
+3. Click "Book this room" / "Reserve Now".
+4. Fill in valid data in the booking form:
+   - Firstname: Illia
+   - Lastname: Test
+   - Email: test@example.com
+   - Phone: 1234567890
+5. Click "Reserve Now".
+Expected Result:
+Booking confirmed modal window appears with the correct dates. Booking is successfully created and status changes.
+
+[Case-2] Check that the room cannot be booked with invalid data
+Pre-conditions:
+1. User is on the booking form page of a selected room.
+Steps:
+1. Leave all input fields empty.
+2. Click "Reserve Now".
+3. Enter an invalid email format (e.g., test.com) and click "Reserve Now".
+Expected Result:
+Booking is not confirmed. Validation error messages appear below the empty or incorrectly filled fields (e.g., "must be a well-formed email address", "First name should not be blank", etc.).
+
+[Case-3] Check that the earlier booked dates show as Unavailable
+Pre-conditions:
+1. A room is already booked for specific dates.
+Steps:
+1. Open the same room's booking page.
+2. View the calendar for the month containing the previously booked dates.
+Expected Result:
+The booked dates are visually disabled, unclickable, or clearly marked as "Unavailable" in the calendar.
+
+[Case-4] Check that a contact message can be successfully sent with valid data
+Pre-conditions:
+1. User is on the "Contact" page of https://automationintesting.online/
+Steps:
+1. Fill in the "Name" field.
+2. Fill in the "Email" field with a valid format.
+3. Fill in the "Phone" field.
+4. Fill in the "Subject" field.
+5. Fill in the "Message" field (between 20 and 2000 characters).
+6. Click the "Submit" button.
+Expected Result:
+Success message "Thanks for getting in touch!" appears on the screen.
+
+[Case-5] Check that a contact message cannot be sent with empty data
+Pre-conditions:
+1. User is on the "Contact" page of https://automationintesting.online/
+Steps:
+1. Click the "Submit" button without filling in any fields.
+Expected Result:
+Validation error messages appear indicating that fields may not be blank.
+
+[Case-6] Check that header navigation links work correctly
+Pre-conditions:
+1. User is on the main page of https://automationintesting.online/
+Steps:
+1. Click on the "Rooms" link in the header.
+Expected Result:
+The page URL changes to include `/#/rooms`.
+
+
+[Case-7] Check that Admin panel is reachable from the header
+Pre-conditions:
+1. User is on the main page of https://automationintesting.online/
+Steps:
+1. Click on "Admin" in the header.
+Expected Result:
+The page URL changes to include `/#/admin`.
+
+[Case-8] Check that Admin panel is reachable from the footer
+Pre-conditions:
+1. User is on the main page of https://automationintesting.online/
+Steps:
+1. Click on "Admin panel" in the footer.
+Expected Result:
+The page URL changes to include `/#/admin`.
+
+[Case-9] Check Privacy Policy link in the footer
+Pre-conditions:
+1. User is on the main page of https://automationintesting.online/
+Steps:
+1. Click on "Privacy Policy".
+Expected Result:
+The page URL changes to include `/#/privacy`.
+
