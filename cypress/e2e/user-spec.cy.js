@@ -16,11 +16,19 @@ describe('User App Booking Flow', () => {
             email: `test${uniqueId}@example.com`,
             phone: '12345678901'
         };
+
         UserPage.openFirstRoomBooking();
-        //UserPage.checkAvailability();
-        UserPage.openBookingForm()
+        UserPage.openBookingForm();
         UserPage.fillBookingForm(dynamicBookingData);
+        cy.intercept('POST', 'https://automationintesting.online/api/booking').as('bookingRequest');
+
         UserPage.submitBooking();
+        cy.wait('@bookingRequest').then((interception) => {
+            expect(interception.response.statusCode).to.be.oneOf([201, 200]);
+            expect(interception.request.body.firstname).to.eq(dynamicBookingData.firstname);
+            expect(interception.request.body.lastname).to.eq(dynamicBookingData.lastname);
+        });
+
         UserPage.verifyBookingConfirmation();
     });
 
@@ -43,8 +51,18 @@ describe('User App Booking Flow', () => {
             subject: 'Test Subject Inquiry',
             message: 'Hello, this is a test message to verify the contact form functionality on the website.'
         };
+
+        cy.intercept('POST', 'https://automationintesting.online/api/message').as('messageRequest');
+
         ContactPage.fillContactForm(validContactData);
         ContactPage.submitForm();
+
+        cy.wait('@messageRequest').then((interception) => {
+            expect(interception.response.statusCode).to.eq(200);
+            expect(interception.request.body.name).to.eq(validContactData.name);
+            expect(interception.request.body.subject).to.eq(validContactData.subject);
+        });
+
         ContactPage.verifySuccessMessage();
     });
     it('Case-5: Should not send contact message with empty data', () => {
@@ -65,7 +83,7 @@ describe('User App Booking Flow', () => {
         UserPage.verifyAdminFooterNavigation();
     });
 
-    it.only('Case-9: Should open Privacy Policy page', () => {
+    it('Case-9: Should open Privacy Policy page', () => {
         UserPage.verifyPrivacyPolicy();
     });
 });
