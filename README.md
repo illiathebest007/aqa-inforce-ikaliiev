@@ -1,4 +1,4 @@
-AQA Inforce Automation Tests
+#AQA Inforce Automation Tests
 
 This repository contains automated tests for the Restful Booker Platform, written using the Cypress testing framework. It focuses on validating the backend API functionality, specifically testing room management and booking operations.
 
@@ -7,12 +7,12 @@ Regression Testing: Verifying that new changes do not break existing API functio
 Test Automation: Validating HTTP methods (GET, POST, PUT, DELETE) and responses to ensure data integrity.
 Continuous Integration: Enabling automated execution of API tests within a CI/CD pipeline to maintain high software quality.
 
-Prerequisites
+##Prerequisites
 To run the tests on your local machine, you need to have the following installed:
 Node.js (version 18.x or higher recommended)
 npm (comes bundled with Node.js)
 
-Installation
+##Installation
 
 Clone the repository:
 git clone https://github.com/illiathebest007/aqa-inforce-ikaliiev.git
