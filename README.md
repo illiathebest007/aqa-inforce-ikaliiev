@@ -47,17 +47,6 @@ In the opened window, select E2E Testing and run admin-spec.cy.js in your browse
 npx cypress run --spec "cypress/e2e/admin-spec.cy.js"
 ```
 
-Test Scenario Description
-The project implements API tests for the platform functionality:
-
-Task 1: Create a room and check on the User page via API
-
-Sends a POST request to create a room with a unique name.
-
-Verifies the response status code is 200.
-
-Performs a GET request to verify the room exists in the system.
-
 Resolving Git Push Conflicts
 If you encounter a conflict while pushing changes to the remote repository, execute the following commands in sequence:
 
