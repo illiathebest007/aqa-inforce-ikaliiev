@@ -1,4 +1,4 @@
-<img width="1448" height="985" alt="image" src="https://github.com/user-attachments/assets/5b45b2a2-a553-4602-aa4f-15b044a42272" /><img width="1448" height="985" alt="image" src="https://github.com/user-attachments/assets/b786e475-5dfb-405a-80da-ba90b732d074" /># AQA Inforce Automation Tests
+# AQA Inforce Automation Tests
 
 This repository contains automated tests for the Restful Booker Platform, written using the Cypress testing framework. It focuses on validating the backend API functionality, specifically testing room management and booking operations.
 
